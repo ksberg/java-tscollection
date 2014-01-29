@@ -1,6 +1,7 @@
 package bitzguild.jcollection.function;
 
 import bitzguild.jcollection.Doubles;
+import bitzguild.jcollection.immutable.BoundedDoublesView;
 import bitzguild.jcollection.transform.DoublesToDoubleFunction;
 
 /**
@@ -23,9 +24,7 @@ public class InfiniteImpulseFilter3Pole implements DoublesToDoubleFunction {
 	@Override
 	public double calculateFirst(Doubles domain, Doubles range, int index, int length) {
 		if (index < 1) return domain.get(0);
-		double alpha = 2.0 / (length + 1.0);
-		double priorXma = range.get(index-1);
-		return (alpha * (domain.get(index) - priorXma)) + priorXma;
+        return calculateEntry(new BoundedDoublesView(domain), new BoundedDoublesView(range), index, length);
 	}
 
 	@Override
