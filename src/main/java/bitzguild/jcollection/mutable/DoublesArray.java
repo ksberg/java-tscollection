@@ -10,4 +10,8 @@ public class DoublesArray extends ArrayList<Double> implements
 	 */
 	private static final long serialVersionUID = 1L;
 
+    public DoublesArray() {
+        super();
+    }
+
 }
