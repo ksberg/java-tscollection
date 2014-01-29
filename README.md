@@ -1,4 +1,4 @@
-java-tsdatetime
+java-tscollection
 ===============
 
-Performant Date replacement for Java with added manipulation and query methods
+Composable Series and Functions
