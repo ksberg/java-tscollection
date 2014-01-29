@@ -6,4 +6,7 @@ import bitzguild.jcollection.Doubles;
 
 public class DoublesVector extends Vector<Double> implements Doubles {
 
+    public DoublesVector() {
+        super();
+    }
 }
