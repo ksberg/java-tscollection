@@ -27,7 +27,7 @@ public class DoublesFunctions {
 	 * @return Doubles output range of moving averages
 	 */
 	public static Doubles xma(Doubles domain, int len) {
-		return new DoublesToDoublesFunctionCache(new ExponentialMovingAverage(len), domain, len);
+		return new DoublesToDoublesFunctionCache(new ExponentialMovingAverage(), domain, len);
 	}
 	
 	/**
@@ -96,6 +96,18 @@ public class DoublesFunctions {
      */
     public static Doubles iifN(Doubles domain, int len) {
         return new DoublesToDoublesFunctionCache(new InfiniteImpulseFilterNPole(), domain, len);
+    }
+
+    /**
+     * Create an second order moving average from the input domain.
+     * Average values are computed once and cached.
+     *
+     * @param domain Doubles input domain
+     * @param len length of moving average
+     * @return Doubles output range of moving averages
+     */
+    public static Doubles o2ma(Doubles domain, int len) {
+        return new DoublesToDoublesFunctionCache(new SecondOrderMovingAverage(), domain, len);
     }
 
     /**

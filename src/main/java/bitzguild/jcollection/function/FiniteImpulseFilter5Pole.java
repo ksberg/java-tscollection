@@ -13,9 +13,7 @@ import bitzguild.jcollection.transform.DoublesToDoubleFunction;
  */
 public class FiniteImpulseFilter5Pole implements DoublesToDoubleFunction {
 
-	public FiniteImpulseFilter5Pole() {
-		
-	}
+	public FiniteImpulseFilter5Pole() {}
 	
 	/**
 	 * Approximate values with 5-period exponential moving average

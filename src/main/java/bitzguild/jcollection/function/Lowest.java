@@ -5,8 +5,7 @@ import bitzguild.jcollection.transform.DoublesToDoubleFunction;
 
 public class Lowest implements DoublesToDoubleFunction {
 
-	public Lowest() {
-	}
+	public Lowest() {}
 	
 	@Override
 	public double calculateFirst(Doubles domain, Doubles range, int index, int length) {

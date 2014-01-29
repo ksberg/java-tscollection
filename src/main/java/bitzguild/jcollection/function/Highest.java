@@ -5,8 +5,7 @@ import bitzguild.jcollection.transform.DoublesToDoubleFunction;
 
 public class Highest implements DoublesToDoubleFunction {
 
-	public Highest() {
-	}
+	public Highest() {}
 	
 	@Override
 	public double calculateFirst(Doubles domain, Doubles range, int index, int length) {

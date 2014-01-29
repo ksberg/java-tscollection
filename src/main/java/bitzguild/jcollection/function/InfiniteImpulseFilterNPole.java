@@ -17,9 +17,7 @@ public class InfiniteImpulseFilterNPole implements DoublesToDoubleFunction {
     protected int       _lag;
     protected int       _len;
 
-	public InfiniteImpulseFilterNPole() {
-		
-	}
+	public InfiniteImpulseFilterNPole() {}
 	
 	/**
 	 * Approximate initial values with exponential moving average

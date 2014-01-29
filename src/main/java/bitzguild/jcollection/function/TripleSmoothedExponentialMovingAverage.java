@@ -13,8 +13,6 @@ import bitzguild.jcollection.DoublesFunctions;
  */
 public class TripleSmoothedExponentialMovingAverage extends DoubleSmoothedExponentialMovingAverage {
 
-	protected Doubles	_xma;
-	protected Doubles	_xmaXma;
 	protected Doubles   _xmaXmaXma;
 	
 	public TripleSmoothedExponentialMovingAverage() {

@@ -5,10 +5,8 @@ import bitzguild.jcollection.transform.DoublesToDoubleFunction;
 
 public class EfficiencyRatio implements DoublesToDoubleFunction {
 
-	public EfficiencyRatio() {
-	}
-	
-	
+	public EfficiencyRatio() {}
+
 	@Override
 	public double calculateFirst(Doubles domain, Doubles range, int index, int length) {
 		return calculateEntry(domain, range, index, index+1);

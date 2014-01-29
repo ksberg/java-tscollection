@@ -14,9 +14,7 @@ import bitzguild.jcollection.transform.DoublesToDoubleFunction;
  */
 public class InfiniteImpulseFilter3Pole implements DoublesToDoubleFunction {
 
-	public InfiniteImpulseFilter3Pole() {
-		
-	}
+	public InfiniteImpulseFilter3Pole() {}
 	
 	/**
 	 * Approximate initial values with exponential moving average

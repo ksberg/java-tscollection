@@ -5,8 +5,7 @@ import bitzguild.jcollection.transform.DoublesToDoubleFunction;
 
 public class Momentum implements DoublesToDoubleFunction {
 
-	public Momentum() {
-	}
+	public Momentum() {}
 
     /**
      * Initialize momentum by incrementing period from zero up to look back.

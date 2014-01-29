@@ -22,7 +22,6 @@ import bitzguild.jcollection.transform.DoublesToDoubleFunction;
 public class KaufmanAdaptiveMovingAverage implements DoublesToDoubleFunction {
 
 	protected Doubles				_effRatio = null;
-	protected Doubles				_price = null;
 
 	protected int					_effPeriod;	// this is set by calc length
 	protected double				_lenFast;	// fast fractional length
@@ -74,8 +73,10 @@ public class KaufmanAdaptiveMovingAverage implements DoublesToDoubleFunction {
 	 */
 	@Override
 	public double calculateFirst(Doubles domain, Doubles range, int index, int length) {
-		set(domain, length);
-		if (index < 1) return domain.get(0);
+		if (index < 1) {
+            set(domain, length);
+            return domain.get(0);
+        }
 		double alpha = 2.0 / (length + 1.0);
 		double priorXma = range.get(index-1);
 		return (alpha * (domain.get(index) - priorXma)) + priorXma;
