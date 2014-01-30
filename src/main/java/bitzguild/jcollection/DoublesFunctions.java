@@ -2,6 +2,7 @@ package bitzguild.jcollection;
 
 import bitzguild.jcollection.Doubles;
 import bitzguild.jcollection.function.*;
+import bitzguild.jcollection.transform.DoublesToDoubleFunction;
 import bitzguild.jcollection.transform.DoublesToDoublesFunctionCache;
 
 public class DoublesFunctions {
@@ -170,7 +171,19 @@ public class DoublesFunctions {
 	public static Doubles lowest(Doubles domain, int len) {
 		return new DoublesToDoublesFunctionCache(new Lowest(), domain, len);
 	}
-	
+
+
+    /**
+     * Answer new series which holds windowing sum over last N events.
+     *
+     * @param domain Doubles input domain
+     * @param len length of moving average
+     * @return Doubles output
+     */
+    public static Doubles sumOverPeriod(Doubles domain, int len) {
+        return new DoublesToDoublesFunctionCache(new SumOverPeriod(), domain, len);
+    }
+
 	/**
 	 * Create series for efficiency ratio, measure of signal-to-noise in
 	 * any directional movement.
@@ -182,7 +195,21 @@ public class DoublesFunctions {
 	public static Doubles efficiency(Doubles domain, int len) {
 		return new DoublesToDoublesFunctionCache(new EfficiencyRatio(), domain, len);
 	}
-	
+
+    /**
+     * Create a standard deviation series derived from given domain, look-back
+     * and optional center function. If center function is null, then deviation
+     * will be measured off Exponential Moving Average of the given length.
+     *
+     * @param domain Doubles input
+     * @param len int length of look-back
+     * @param centerFunction center smoothing function [optional]
+     * @return Doubles output
+     */
+    public static Doubles stddev(Doubles domain, int len, DoublesToDoubleFunction centerFunction) {
+        if (centerFunction == null) return new DoublesToDoublesFunctionCache(new StandardDeviation(), domain, len);
+        else return  new DoublesToDoublesFunctionCache(new StandardDeviation(centerFunction), domain, len);
+    }
 
 
 	
